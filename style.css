@@ -1,1 +1,146 @@
+/* ===== CONFIGURAÇÕES GERAIS ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #006437, #009c3b, #ffdf00);
+    color: #222;
+    line-height: 1.7;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+/* ===== CABEÇALHO ===== */
+h1 {
+    text-align: center;
+    color: white;
+    background: linear-gradient(90deg, #006437, #009c3b);
+    padding: 35px 20px;
+    font-size: clamp(2rem, 6vw, 4rem);
+    letter-spacing: 3px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+    border-bottom: 5px solid #ffdf00;
+}
+
+/* ===== CONTEÚDO ===== */
+body > p,
+h2,
+h3 {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body > p {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px 25px;
+    margin-top: 18px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Primeiro parágrafo */
+h1 + p {
+    background: transparent;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: none;
+}
+
+/* ===== TÍTULOS ===== */
+h2,
+h3 {
+    color: white;
+    background: linear-gradient(90deg, #006437, #008f3c);
+    padding: 15px 20px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    border-left: 8px solid #ffdf00;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+/* ===== EFEITO NOS PARÁGRAFOS ===== */
+body > p {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body > p:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== RODAPÉ ===== */
+body::after {
+    content: "⚽ MUNDO DA COPA • Futebol, história e paixão";
+    display: block;
+    max-width: 1000px;
+    margin: 40px auto 0;
+    padding: 25px;
+    background: #006437;
+    color: white;
+    text-align: center;
+    border-radius: 12px;
+    font-weight: bold;
+    border-top: 4px solid #ffdf00;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 700px) {
+    body {
+        padding: 0 12px 30px;
+    }
+
+    h1 {
+        margin: 0 -12px;
+        font-size: 2rem;
+        padding: 25px 10px;
+    }
+
+    body > p {
+        padding: 16px;
+        font-size: 0.95rem;
+    }
+
+    h2,
+    h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===== ANIMAÇÃO DE ENTRADA ===== */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2,
+h3,
+body > p {
+    animation: aparecer 0.7s ease both;
+}
